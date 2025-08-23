@@ -1,0 +1,114 @@
+1. SOIL SENSOR
+
+#define SOIL_SENSOR 35
+
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+  int soilValue = analogRead(SOIL_SENSOR);
+  Serial.print("Soil Moisture: ");
+  Serial.println(soilValue);
+  delay(500);
+}
+
+2. DHT11 - TEMPERATURE AND HUMIDITY SENSOR
+
+#include "DHT.h"
+
+#define DHTPIN 25
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+}
+
+void loop() {
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+
+  if (isnan(h) || isnan(t)) {
+    Serial.println("Failed to read from DHT sensor!");
+    return;
+  }
+
+  Serial.print("Humidity: ");
+  Serial.print(h);
+  Serial.print("%  Temperature: ");
+  Serial.print(t);
+  Serial.println("°C");
+
+  delay(2000);
+}
+
+3. RAIN SENSOR
+
+#define RAIN_SENSOR 34
+
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+  int rainValue = analogRead(RAIN_SENSOR);
+  Serial.print("Rain Sensor Value: ");
+  Serial.println(rainValue);
+  delay(500);
+}
+
+#define RAIN_SENSOR_PIN 34
+
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+  int rainValue = analogRead(RAIN_SENSOR_PIN);
+  
+  Serial.print("Rain Sensor Value: ");
+  Serial.println(rainValue);
+
+  if (rainValue < 2000) {  
+    Serial.println("🌧 Rain Detected!");
+  } else {
+    Serial.println("☀ No Rain");
+  }
+
+  delay(1000);
+}
+
+4. ULTRASONIC SENSOR
+
+#define TRIG_PIN 23   // ESP32 GPIO for Trigger
+#define ECHO_PIN 22  // ESP32 GPIO for Echo
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+}
+
+void loop() {
+  // Send a short 10us pulse to trigger ultrasonic
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  // Measure echo pulse duration
+  long duration = pulseIn(ECHO_PIN, HIGH);
+
+  // Convert duration to distance (in cm)
+  float distance = duration * 0.034 / 2;
+
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  delay(500);
+}
