@@ -1,0 +1,88 @@
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include "DHT.h"
+
+// ---------- WiFi ----------
+const char* ssid = "102";
+const char* password = "23082025";
+
+// ---------- Flask Server ----------
+String serverName = "http://10.50.61.182:5000/predict";
+
+// ---------- Sensors ----------
+#define TRIG_PIN 23
+#define ECHO_PIN 22
+#define RAIN_SENSOR 34
+#define SOIL_SENSOR 35
+#define DHTPIN 25
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nWiFi Connected");
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+  dht.begin();
+}
+
+void loop() {
+  // ---- Ultrasonic ----
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+  long duration = pulseIn(ECHO_PIN, HIGH);
+  float distance = duration * 0.034 / 2; // cm
+
+  // ---- Rain & Soil ----
+  float rainValue = analogRead(RAIN_SENSOR);
+  float soilValue = analogRead(SOIL_SENSOR);
+
+  // ---- DHT ----
+  float humidity = dht.readHumidity();
+  float temperature = dht.readTemperature();
+
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println("DHT error");
+    return;
+  }
+
+  // ---- Local Logs ----
+  Serial.println("---- Raw Sensor Data ----");
+  Serial.printf("Soil Moisture (ADC): %.2f\n", soilValue);
+  Serial.printf("Rainfall (ADC): %.2f\n", rainValue);
+  Serial.printf("Distance (cm): %.2f\n", distance);
+  Serial.printf("Temperature (C): %.2f\n", temperature);
+  Serial.printf("Humidity (%%): %.2f\n", humidity);
+
+  // ---- Send to Flask ----
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    http.begin(serverName);
+    http.addHeader("Content-Type", "application/json");
+
+    String jsonData = "{\"soil_moisture\":" + String(soilValue) +
+                      ",\"rainfall\":" + String(rainValue) +
+                      ",\"distance\":" + String(distance) +
+                      ",\"temperature\":" + String(temperature) +
+                      ",\"humidity\":" + String(humidity) + "}";
+
+    int httpResponseCode = http.POST(jsonData);
+    if (httpResponseCode > 0) {
+      String payload = http.getString();
+      Serial.println("Prediction Response: " + payload);
+    } else {
+      Serial.println("Error in POST: " + String(httpResponseCode));
+    }
+    http.end();
+  }
+
+  delay(5000);
+}
