@@ -38,9 +38,9 @@ void loop() {
   Serial.println(" cm");
 
   // ------------------ Rain Sensor ------------------
-  int rainValue = analogRead(RAIN_SENSOR);
+  float rainValue = analogRead(RAIN_SENSOR);
   Serial.print("Rain Sensor Value: ");
-  Serial.println(rainValue);
+  Serial.println(rainValue/10.0);
 
   // ------------------ Soil Moisture ------------------
   int soilValue = analogRead(SOIL_SENSOR);
