@@ -10,7 +10,7 @@ import pickle
 
 # ========= Load Dataset =========
 # Load your Excel dataset (update filename if needed)
-data = pd.read_csv("wsn_landslide_data_modified (1).csv")
+data = pd.read_csv(r"e:\Projects\DripTect\Flood Predictor Model ML\wsn_landslide_data_modified (1).csv")
 
 print(type(data))
 
@@ -107,4 +107,4 @@ model_data = {
 with open("rainfall_prediction_model.pkl", "wb") as f:
     pickle.dump(model_data, f)
 
-print("✅Model trained and saved as rainfall_prediction_model.pkl")
+print("Model trained and saved as rainfall_prediction_model.pkl")
