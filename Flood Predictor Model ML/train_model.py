@@ -10,7 +10,7 @@ import pickle
 
 # ========= Load Dataset =========
 # Load your Excel dataset (update filename if needed)
-data = pd.read_csv(r"e:\Projects\DripTect\Flood Predictor Model ML\wsn_landslide_data_modified (1).csv")
+data = pd.read_csv(r"E:\Projects\DripTect\Flood Predictor Model ML\data.csv")
 
 print(type(data))
 
