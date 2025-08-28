@@ -132,7 +132,7 @@ NEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here
 [2025-08-28 10:15:32]  Prediction Log
 ====================================================================================================
  No  Soil Moisture (%)  Temperature (°C)  Humidity (%)  Rainfall (mm)  Distance (cm)  Prediction
-  1              45.00              29.5         72.0          120.0          30.4     HIGH RISK
+  1              45.00              29.5         72.0          120.0          30.4     FLOOD LIKELY
 ====================================================================================================
 ```
 
