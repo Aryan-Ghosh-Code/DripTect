@@ -190,7 +190,10 @@ export default function LandingPage() {
                 </span>
               </a>
               
-              <button className="group relative px-10 py-4 bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl text-white font-bold text-lg hover:bg-white/20 hover:border-white/40 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-white/30 overflow-hidden">
+              <button 
+                onClick={handleAnalyzeWeather}
+                className="group relative px-10 py-4 bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl text-white font-bold text-lg hover:bg-white/20 hover:border-white/40 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-white/30 overflow-hidden"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative flex items-center z-10">
