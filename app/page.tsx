@@ -26,6 +26,12 @@ import {
   ExternalLink
 } from 'lucide-react'
 
+import AryanImg from './Assets/Aryan.png'
+import SurajitImg from './Assets/Surajit.jpg'
+import AnshleyImg from './Assets/Anshley.jpg'
+import DebnandaImg from './Assets/Debnanda.jpg'
+import SystemArchImg from './Assets/System Architechture.png'
+
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -268,6 +274,20 @@ export default function LandingPage() {
             <p className="text-gray-300 text-xl">Built with cutting-edge technology for reliable, scalable flood monitoring</p>
           </div>
 
+          {/* System Architecture Image */}
+          <div className="flex justify-center mb-16">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl"></div>
+              <div className="relative overflow-hidden rounded-3xl border border-blue-500/30 shadow-2xl shadow-blue-500/20">
+                <img
+                  src={SystemArchImg.src}
+                  alt="System Architecture Diagram"
+                  className="w-full max-w-4xl h-auto object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Edge Sensors */}
             <div className="group relative">
@@ -413,19 +433,23 @@ export default function LandingPage() {
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
-                {/* Profile Image Placeholder */}
-                <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold">JD</span>
+                {/* Profile Image */}
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 overflow-hidden border-4 border-blue-500/30">
+                  <img 
+                    src={AryanImg.src} 
+                    alt="Aryan Ghosh" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Aryan Ghosh</h3>
-                <p className="text-blue-300 font-medium mb-4">ML and IoT Specilaist</p>
+                <p className="text-blue-300 font-medium mb-4">ML and IoT Specialist</p>
                 <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                  Expert in machine learning and computer vision, specializing in flood pattern recognition and predictive modeling.
+                  ML Engineer and IoT expert with deep knowledge in sensor networks, and real-time data processing systems.
                 </p>
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
                   <a
-                    href="https://linkedin.com/in/johndoe" 
+                    href="https://linkedin.com/in/aryan-ghosh-83a26631b" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     title="LinkedIn profile of Aryan Ghosh"
@@ -441,19 +465,23 @@ export default function LandingPage() {
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 text-center hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
-                {/* Profile Image Placeholder */}
-                <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-cyan-500/25 flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold">JS</span>
+                {/* Profile Image */}
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-cyan-500/25 overflow-hidden border-4 border-cyan-500/30">
+                  <img 
+                    src={SurajitImg.src} 
+                    alt="Surajit Ray" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Jane Smith</h3>
-                <p className="text-cyan-300 font-medium mb-4">Hardware Specialist</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Surajit Ray</h3>
+                <p className="text-cyan-300 font-medium mb-4">ML and IoT Specialist</p>
                 <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                  IoT expert with deep knowledge in sensor networks, edge computing, and real-time data processing systems.
+                  Expert in machine learning and computer vision, specializing in flood pattern recognition and predictive modeling.
                 </p>
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
                   <a 
-                    href="https://linkedin.com/in/janesmith" 
+                    href="https://linkedin.com/in/surajit-ray-0761382b9" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     title="LinkedIn profile of Jane Smith"
@@ -469,19 +497,23 @@ export default function LandingPage() {
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
-                {/* Profile Image Placeholder */}
-                <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold">MJ</span>
+                {/* Profile Image */}
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 overflow-hidden border-4 border-blue-500/30">
+                  <img 
+                    src={AnshleyImg.src} 
+                    alt="Anshley Mukherjee" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Mike Johnson</h3>
-                <p className="text-blue-300 font-medium mb-4">Full Stack Developer</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Anshley Mukherjee</h3>
+                <p className="text-blue-300 font-medium mb-4">Full Stack Dev and UI Lead</p>
                 <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                  Frontend and backend specialist, creating responsive dashboards and scalable APIs for real-time monitoring.
+                  Frontend and UI specialist, creating responsive dashboards and scalable APIs for real-time monitoring.
                 </p>
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
                   <a 
-                    href="https://linkedin.com/in/mikejohnson" 
+                    href="https://linkedin.com/in/anshley-mukherjee-8b1935320" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     title="LinkedIn profile of Mike Johnson"
@@ -497,19 +529,23 @@ export default function LandingPage() {
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 text-center hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
-                {/* Profile Image Placeholder */}
-                <div className="w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-purple-500/25 flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold">SW</span>
+                {/* Profile Image */}
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-purple-500/25 overflow-hidden border-4 border-purple-500/30">
+                  <img 
+                    src={DebnandaImg.src} 
+                    alt="Debnanda Datta" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Sarah Wilson</h3>
-                <p className="text-purple-300 font-medium mb-4">Data Scientist</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Debnanda Datta</h3>
+                <p className="text-purple-300 font-medium mb-4">Frontend and Database Lead</p>
                 <p className="text-gray-300 text-sm mb-6 leading-relaxed">
                   Analytics expert focused on environmental data analysis, risk assessment, and predictive modeling for flood events.
                 </p>
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
                   <a 
-                    href="https://linkedin.com/in/sarahwilson" 
+                    href="https://linkedin.com/in/debnanda-datta" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     title="LinkedIn profile of Sarah Wilson"
