@@ -15,15 +15,31 @@ import {
   Brain,
   Smartphone,
   Mail,
-  MessageSquare
+  MessageSquare,
+  Sparkles,
+  Shield,
+  Activity,
+  Cloud,
+  CloudRain,
+  Linkedin,
+  Github,
+  ExternalLink
 } from 'lucide-react'
 
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const router = useRouter()
 
   useEffect(() => {
     setIsVisible(true)
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+    
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
   const handlePredictNow = () => {
@@ -35,203 +51,288 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
-      {/* Animated Background Stars */}
-      <div className="absolute inset-0 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-black relative overflow-hidden">
+      {/* Dark Rainy Background */}
+      <div className="absolute inset-0">
+        {/* Dark Storm Clouds */}
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-gray-800/60 to-transparent"></div>
+        <div className="absolute top-10 left-1/4 w-96 h-32 bg-gradient-to-b from-gray-700/40 to-transparent rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 right-1/3 w-80 h-24 bg-gradient-to-b from-gray-700/50 to-transparent rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-5 left-2/3 w-72 h-28 bg-gradient-to-b from-gray-700/30 to-transparent rounded-full blur-3xl animate-pulse delay-2000"></div>
+        
+        {/* Rain Drops */}
         {[...Array(100)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-pulse"
+            className="absolute w-0.5 h-8 bg-gradient-to-b from-blue-400/60 to-transparent animate-rain"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 2}s`,
+              animationDuration: `${0.8 + Math.random() * 0.4}s`
+            }}
+          />
+        ))}
+        
+        {/* Heavy Rain Drops */}
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={`heavy-${i}`}
+            className="absolute w-1 h-12 bg-gradient-to-b from-blue-300/80 to-transparent animate-rain-heavy"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
+              animationDuration: `${1.2 + Math.random() * 0.6}s`
             }}
           />
         ))}
+        
+        {/* Misty Atmosphere */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-800/20 via-transparent to-gray-900/30"></div>
+        
+        {/* Subtle Lightning Flashes */}
+        <div className="absolute inset-0 bg-white/5 animate-lightning opacity-0"></div>
+        
+        {/* Dark Gradient Orbs (reduced opacity for rainy effect) */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/8 to-pink-500/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/8 to-blue-500/8 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        
+        {/* Floating Particles (reduced for rainy atmosphere) */}
+        {[...Array(30)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-gradient-to-r from-blue-400/40 to-cyan-400/40 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(56,189,248,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-10"></div>
       </div>
+
+      {/* Mouse Follow Effect (kept as requested) */}
+      <div 
+        className="fixed w-96 h-96 bg-gradient-to-r from-blue-500/8 to-purple-500/8 rounded-full blur-3xl pointer-events-none transition-transform duration-300 ease-out z-0"
+        style={{
+          left: mousePosition.x - 192,
+          top: mousePosition.y - 192,
+        }}
+      />
 
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-4">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Subtitle */}
+        <div className="text-center max-w-5xl mx-auto">
+          {/* Floating Badge */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <p className="text-cyan-400 text-lg font-medium mb-4">Advanced Flood Detection & Prevention</p>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-md border border-blue-500/30 rounded-full px-6 py-3 mb-8 group hover:scale-105 transition-all duration-300">
+              <CloudRain className="w-5 h-5 text-blue-400 animate-pulse" />
+              <span className="text-blue-400 font-medium">AI-Powered Flood Detection</span>
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+            </div>
           </div>
 
-          {/* Main Title */}
+          {/* Main Title with Enhanced Effects */}
           <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h1 className="text-6xl md:text-8xl font-bold text-cyan-400 mb-6 relative">
+            <h1 className="text-7xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-500 to-blue-600 mb-6 relative group">
               DRIPTECT
-              {/* 3D Globe Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-3xl transform scale-150 -z-10"></div>
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-cyan-500/20 to-blue-600/20 blur-3xl transform scale-150 -z-10 group-hover:scale-200 transition-transform duration-700"></div>
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full animate-bounce"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-bounce delay-1000"></div>
             </h1>
           </div>
 
-          {/* Tagline */}
+          {/* Enhanced Tagline */}
           <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <p className="text-cyan-300 text-xl md:text-2xl font-medium mb-8">Intelligent Flood Detection System</p>
+            <p className="text-blue-300 text-2xl md:text-3xl font-light mb-8 tracking-wide">
+              Intelligent Flood Detection System
+            </p>
           </div>
 
-          {/* Description Card */}
+          {/* Glassmorphism Description Card */}
           <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 mb-12 max-w-3xl mx-auto">
-              <p className="text-gray-300 text-lg leading-relaxed">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 mb-12 max-w-4xl mx-auto shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/20 transition-all duration-500 group">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <p className="text-gray-200 text-xl leading-relaxed relative z-10">
                 Transform early flood signals into life-saving action with our AI-powered monitoring system combining edge sensors, computer vision, machine learning, and real-time risk assessment.
               </p>
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* Enhanced CTA Buttons */}
           <div className={`transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl text-white font-semibold text-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25">
-                Explore Workflow
-                <ArrowRight className="inline ml-2 group-hover:translate-x-1 transition-transform" />
+              <button className="group relative px-10 py-5 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-2xl text-white font-bold text-lg overflow-hidden hover:from-blue-400 hover:to-cyan-500 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/50">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <span className="relative flex items-center">
+                  Explore Workflow
+                  <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+                </span>
               </button>
               
-              <button className="group relative px-8 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white font-semibold text-lg hover:bg-gray-700/50 hover:border-gray-500 transition-all duration-300 transform hover:scale-105">
-                Get Started
+              <button className="group relative px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white font-bold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-white/20">
+                <span className="relative flex items-center">
+                  Get Started
+                  <Shield className="ml-3 group-hover:scale-110 transition-transform duration-300" />
+                </span>
               </button>
               
               <button 
                 onClick={handlePredictNow}
-                className="group relative px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl text-white font-semibold text-lg hover:from-red-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25"
+                className="group relative px-10 py-5 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl text-white font-bold text-lg overflow-hidden hover:from-red-400 hover:to-orange-400 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-red-500/50"
               >
-                <Bell className="inline mr-2" />
-                Predict Now
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <span className="relative flex items-center">
+                  <Bell className="mr-3 group-hover:animate-pulse" />
+                  Predict Now
+                </span>
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="relative z-10 py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How It Works</h2>
-            <p className="text-gray-400 text-lg">Intelligent flood prediction and rapid response system</p>
+      {/* Enhanced How It Works Section */}
+      <section className="relative z-10 py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-600 mb-6">How It Works</h2>
+            <p className="text-gray-300 text-xl">Intelligent flood prediction and rapid response system</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Edge Sensors */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8 text-center hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Satellite className="w-8 h-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
+                  <Satellite className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Edge Sensors</h3>
-                <p className="text-gray-300">Collect water level, rainfall, and soil moisture data in real-time</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Edge Sensors</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Collect water level, rainfall, and soil moisture data in real-time</p>
               </div>
             </div>
 
             {/* Vision AI */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 text-center hover:border-purple-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Eye className="w-8 h-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-10 text-center hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/25">
+                  <Eye className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Vision AI</h3>
-                <p className="text-gray-300">Camera systems detect flood patterns and water levels visually</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Vision AI</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Camera systems detect flood patterns and water levels visually</p>
               </div>
             </div>
 
             {/* ML Engine */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-pink-500/20 to-rose-600/20 backdrop-blur-sm border border-pink-500/30 rounded-2xl p-8 text-center hover:border-pink-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Bot className="w-8 h-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
+                  <Bot className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">ML Engine</h3>
-                <p className="text-gray-300">Fuses sensor and vision data to predict flood risk levels</p>
+                <h3 className="text-2xl font-bold text-white mb-6">ML Engine</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Fuses sensor and vision data to predict flood risk levels</p>
               </div>
             </div>
 
             {/* Alerts & Dashboard */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-red-500/20 to-orange-600/20 backdrop-blur-sm border border-red-500/30 rounded-2xl p-8 text-center hover:border-red-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Grid3X3 className="w-8 h-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-10 text-center hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
+                  <Grid3X3 className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Alerts & Dashboard</h3>
-                <p className="text-gray-300">Sends SMS/email alerts and displays on 3D globe dashboard</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Alerts & Dashboard</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Sends SMS/email alerts and displays on 3D globe dashboard</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* System Architecture Section */}
-      <section className="relative z-10 py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">System Architecture</h2>
-            <p className="text-gray-400 text-lg">Built with cutting-edge technology for reliable, scalable flood monitoring</p>
+      {/* Enhanced System Architecture Section */}
+      <section className="relative z-10 py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-600 mb-6">System Architecture</h2>
+            <p className="text-gray-300 text-xl">Built with cutting-edge technology for reliable, scalable flood monitoring</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Edge Sensors */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-cyan-500/20 to-purple-600/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="w-6 h-6 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
+                  <Zap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">Edge Sensors</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
-                  <li>• ESP32 Microcontrollers</li>
-                  <li>• DHT11 Temperature/Humidity</li>
-                  <li>• Soil Moisture Sensors</li>
-                  <li>• Rain Detection Modules</li>
+                <ul className="text-gray-300 space-y-3 text-sm">
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>ESP32 Microcontrollers</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>DHT11 Temperature/Humidity</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Soil Moisture Sensors</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Rain Detection Modules</li>
                 </ul>
               </div>
             </div>
 
             {/* Edge Vision */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 hover:border-purple-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Eye className="w-6 h-6 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/25">
+                  <Eye className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">Edge Vision</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
-                  <li>• Raspberry Pi 4</li>
-                  <li>• NVIDIA Jetson Nano</li>
-                  <li>• OpenCV Processing</li>
-                  <li>• Real-time Analysis</li>
+                <ul className="text-gray-300 space-y-3 text-sm">
+                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>Raspberry Pi 4</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>NVIDIA Jetson Nano</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>OpenCV Processing</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>Real-time Analysis</li>
                 </ul>
               </div>
             </div>
 
             {/* ML Backend */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-pink-500/20 to-rose-600/20 backdrop-blur-sm border border-pink-500/30 rounded-2xl p-8 hover:border-pink-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Brain className="w-6 h-6 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
+                  <Brain className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">ML Backend</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
-                  <li>• FastAPI Framework</li>
-                  <li>• Random Forest ML</li>
-                  <li>• CNN Vision Models</li>
-                  <li>• Real-time Processing</li>
+                <ul className="text-gray-300 space-y-3 text-sm">
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>FastAPI Framework</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Random Forest ML</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>CNN Vision Models</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Real-time Processing</li>
                 </ul>
               </div>
             </div>
 
             {/* Dashboard */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-red-500/20 to-purple-600/20 backdrop-blur-sm border border-red-500/30 rounded-2xl p-8 hover:border-red-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-purple-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Globe className="w-6 h-6 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
+                  <Globe className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">Dashboard</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
-                  <li>• Next.js Frontend</li>
-                  <li>• Three.js 3D Globe</li>
-                  <li>• Real-time Updates</li>
-                  <li>• Mobile Responsive</li>
+                <ul className="text-gray-300 space-y-3 text-sm">
+                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Next.js Frontend</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Three.js 3D Globe</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Real-time Updates</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Mobile Responsive</li>
                 </ul>
               </div>
             </div>
@@ -239,85 +340,228 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Key Features Section */}
-      <section className="relative z-10 py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Key Features</h2>
-            <p className="text-gray-400 text-lg">Comprehensive flood monitoring with cutting-edge technology and intelligent alerts</p>
+      {/* Enhanced Key Features Section */}
+      <section className="relative z-10 py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-600 mb-6">Key Features</h2>
+            <p className="text-gray-300 text-xl">Comprehensive flood monitoring with cutting-edge technology and intelligent alerts</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Real-time Detection */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Satellite className="w-8 h-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
+                  <Activity className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Real-time Detection</h3>
-                <p className="text-gray-300">Detect floods in &lt;10s latency with continuous monitoring</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Real-time Detection</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Detect floods in &lt;10s latency with continuous monitoring</p>
               </div>
             </div>
 
             {/* Hyperlocal Risk Mapping */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8 hover:border-blue-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="w-8 h-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-10 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/25">
+                  <MapPin className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Hyperlocal Risk Mapping</h3>
-                <p className="text-gray-300">Interactive 3D globe dashboard with flood hotspot visualization</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Hyperlocal Risk Mapping</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Interactive 3D globe dashboard with flood hotspot visualization</p>
               </div>
             </div>
 
             {/* AI-Powered Accuracy */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-pink-500/20 to-purple-600/20 backdrop-blur-sm border border-pink-500/30 rounded-2xl p-8 hover:border-pink-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Bot className="w-8 h-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
+                  <Bot className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">AI-Powered Accuracy</h3>
-                <p className="text-gray-300">Advanced sensor fusion with computer vision and machine learning</p>
+                <h3 className="text-2xl font-bold text-white mb-6">AI-Powered Accuracy</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Advanced sensor fusion with computer vision and machine learning</p>
               </div>
             </div>
 
             {/* Instant Alerts */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-red-500/20 to-orange-600/20 backdrop-blur-sm border border-red-500/30 rounded-2xl p-8 hover:border-red-400/50 transition-all duration-300 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Bell className="w-8 h-8 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-10 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
+                  <Bell className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Instant Alerts</h3>
-                <p className="text-gray-300">SMS, email, and dashboard notifications for immediate response</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Instant Alerts</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">SMS, email, and dashboard notifications for immediate response</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative z-10 py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-3xl p-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Deploy?</h2>
-            <p className="text-gray-300 text-lg mb-8">Start monitoring your area with the most advanced flood detection system</p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button 
-                onClick={handleViewDashboard}
-                className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl text-white font-semibold text-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
-              >
-                <Smartphone className="inline mr-2" />
-                View Dashboard
-                <ArrowRight className="inline ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl text-white font-semibold text-lg hover:from-red-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25">
-                <Mail className="inline mr-2" />
-                Contact Us
-              </button>
+      {/* Meet Our Team Section */}
+      <section className="relative z-10 py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-600 mb-6">Meet Our Team</h2>
+            <p className="text-gray-300 text-xl">The brilliant minds behind DripTect's innovative flood detection system</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Team Member 1 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                {/* Profile Image Placeholder */}
+                <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 flex items-center justify-center">
+                  <span className="text-white text-4xl font-bold">JD</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Aryan Ghosh</h3>
+                <p className="text-blue-300 font-medium mb-4">ML and IoT Specilaist</p>
+                <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                  Expert in machine learning and computer vision, specializing in flood pattern recognition and predictive modeling.
+                </p>
+                {/* Social Links */}
+                <div className="flex justify-center gap-4">
+                  <a
+                    href="https://linkedin.com/in/johndoe" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="LinkedIn profile of Aryan Ghosh"
+                    className="group/link relative p-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
+                  >
+                    <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Team Member 2 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 text-center hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                {/* Profile Image Placeholder */}
+                <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-cyan-500/25 flex items-center justify-center">
+                  <span className="text-white text-4xl font-bold">JS</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Jane Smith</h3>
+                <p className="text-cyan-300 font-medium mb-4">Hardware Specialist</p>
+                <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                  IoT expert with deep knowledge in sensor networks, edge computing, and real-time data processing systems.
+                </p>
+                {/* Social Links */}
+                <div className="flex justify-center gap-4">
+                  <a 
+                    href="https://linkedin.com/in/janesmith" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="LinkedIn profile of Jane Smith"
+                    className="group/link relative p-3 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25"
+                  >
+                    <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Team Member 3 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                {/* Profile Image Placeholder */}
+                <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 flex items-center justify-center">
+                  <span className="text-white text-4xl font-bold">MJ</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Mike Johnson</h3>
+                <p className="text-blue-300 font-medium mb-4">Full Stack Developer</p>
+                <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                  Frontend and backend specialist, creating responsive dashboards and scalable APIs for real-time monitoring.
+                </p>
+                {/* Social Links */}
+                <div className="flex justify-center gap-4">
+                  <a 
+                    href="https://linkedin.com/in/mikejohnson" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="LinkedIn profile of Mike Johnson"
+                    className="group/link relative p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
+                  >
+                    <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Team Member 4 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 text-center hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+                {/* Profile Image Placeholder */}
+                <div className="w-32 h-32 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-purple-500/25 flex items-center justify-center">
+                  <span className="text-white text-4xl font-bold">SW</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Sarah Wilson</h3>
+                <p className="text-purple-300 font-medium mb-4">Data Scientist</p>
+                <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                  Analytics expert focused on environmental data analysis, risk assessment, and predictive modeling for flood events.
+                </p>
+                {/* Social Links */}
+                <div className="flex justify-center gap-4">
+                  <a 
+                    href="https://linkedin.com/in/sarahwilson" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="LinkedIn profile of Sarah Wilson"
+                    className="group/link relative p-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-purple-500/25"
+                  >
+                    <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Custom CSS for animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes rain {
+          0% { transform: translateY(-100vh); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .animate-rain {
+          animation: rain linear infinite;
+        }
+        
+        @keyframes rain-heavy {
+          0% { transform: translateY(-100vh); opacity: 0; }
+          10% { opacity: 0.8; }
+          90% { opacity: 0.8; }
+          100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .animate-rain-heavy {
+          animation: rain-heavy linear infinite;
+        }
+        
+        @keyframes lightning {
+          0%, 90%, 100% { opacity: 0; }
+          5%, 15% { opacity: 0.1; }
+        }
+        .animate-lightning {
+          animation: lightning 8s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   )
 }
