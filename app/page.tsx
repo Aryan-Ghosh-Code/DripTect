@@ -57,7 +57,7 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-black relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-slate-900 relative overflow-hidden">
       {/* Dark Rainy Background */}
       <div className="absolute inset-0">
         {/* Dark Storm Clouds */}
@@ -176,16 +176,24 @@ export default function LandingPage() {
           {/* Enhanced CTA Buttons */}
           <div className={`transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group relative px-10 py-5 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-2xl text-white font-bold text-lg overflow-hidden hover:from-blue-400 hover:to-cyan-500 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/50">
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <span className="relative flex items-center">
+              <a
+                href="https://youtu.be/HuC1Jaxm1tc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-10 py-4 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-600 rounded-3xl text-white font-bold text-lg overflow-hidden hover:from-blue-500 hover:via-cyan-500 hover:to-cyan-400 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/60 border border-blue-400/30 hover:border-cyan-400/50 backdrop-blur-sm"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative flex items-center z-10">
                   Explore Workflow
                   <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
-              </button>
+              </a>
               
-              <button className="group relative px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white font-bold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-white/20">
-                <span className="relative flex items-center">
+              <button className="group relative px-10 py-4 bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl text-white font-bold text-lg hover:bg-white/20 hover:border-white/40 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-white/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative flex items-center z-10">
                   Get Started
                   <Shield className="ml-3 group-hover:scale-110 transition-transform duration-300" />
                 </span>
@@ -193,12 +201,13 @@ export default function LandingPage() {
               
               <button 
                 onClick={handlePredictNow}
-                className="group relative px-10 py-5 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl text-white font-bold text-lg overflow-hidden hover:from-red-400 hover:to-orange-400 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-red-500/50"
+                className="group relative px-10 py-4 bg-gradient-to-r from-red-600 via-red-500 to-orange-600 rounded-3xl text-white font-bold text-lg overflow-hidden hover:from-red-500 hover:via-orange-500 hover:to-orange-400 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-red-600/60 border border-red-500/30 hover:border-orange-400/50 backdrop-blur-sm"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <span className="relative flex items-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative flex items-center z-10">
                   <Bell className="mr-3 group-hover:animate-pulse" />
-                  Predict Now
+                  Show Live Prediciton
                 </span>
               </button>
             </div>
@@ -218,48 +227,48 @@ export default function LandingPage() {
             {/* Edge Sensors */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 min-h-[320px] flex flex-col justify-between">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Satellite className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Edge Sensors</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">Collect water level, rainfall, and soil moisture data in real-time</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Real-Time Data Collection</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Smart IoT sensors continuously track rainfall, soil moisture, temperature, humidity, and water levels from the field, ensuring accurate and up-to-date monitoring.</p>
               </div>
             </div>
 
             {/* Vision AI */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-10 text-center hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-10 text-center hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 min-h-[320px] flex flex-col justify-between">
                 <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/25">
                   <Eye className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Vision AI</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">Camera systems detect flood patterns and water levels visually</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Weather Dashboard</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Combines sensor data with OpenWeather API feeds and presents them in an interactive 3D globe heatmap with live stats, 24-hour trends, and 7-day and 30-day forecasts.</p>
               </div>
             </div>
 
             {/* ML Engine */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 min-h-[320px] flex flex-col justify-between">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Bot className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">ML Engine</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">Fuses sensor and vision data to predict flood risk levels</p>
+                <h3 className="text-2xl font-bold text-white mb-6">AI-Powered Risk Prediction</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">A custom machine learning model analyzes real-time and historical data to deliver precise flood risk predictions and actionable insights for better decision-making.</p>
               </div>
             </div>
 
             {/* Alerts & Dashboard */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-10 text-center hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-10 text-center hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 min-h-[320px] flex flex-col justify-between">
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
                   <Grid3X3 className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Alerts & Dashboard</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">Sends SMS/email alerts and displays on 3D globe dashboard</p>
+                <h3 className="text-2xl font-bold text-white mb-6">Instant Alerts & Notifications</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">Users receive instant flood risk alerts and actionable recommendations, enabling timely preventive measures and community preparedness.</p>
               </div>
             </div>
           </div>
@@ -292,16 +301,17 @@ export default function LandingPage() {
             {/* Edge Sensors */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 min-h-[280px] flex flex-col justify-between">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">Edge Sensors</h3>
                 <ul className="text-gray-300 space-y-3 text-sm">
-                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>ESP32 Microcontrollers</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>ESP32 Microcontrollers using Wi-Fi Module</li>
                   <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>DHT11 Temperature/Humidity</li>
                   <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Soil Moisture Sensors</li>
                   <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Rain Detection Modules</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Water Level Sensors</li>
                 </ul>
               </div>
             </div>
@@ -309,16 +319,15 @@ export default function LandingPage() {
             {/* Edge Vision */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 min-h-[280px] flex flex-col justify-between">
                 <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/25">
                   <Eye className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Edge Vision</h3>
+                <h3 className="text-xl font-bold text-white mb-4">Data Processing & API Layer</h3>
                 <ul className="text-gray-300 space-y-3 text-sm">
-                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>Raspberry Pi 4</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>NVIDIA Jetson Nano</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>OpenCV Processing</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>Real-time Analysis</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>Flask API for secure data transmission</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>Preprocessing and storage of incoming sensor data</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>Integration with OpenWeather API</li>
                 </ul>
               </div>
             </div>
@@ -330,12 +339,12 @@ export default function LandingPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Brain className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">ML Backend</h3>
+                <h3 className="text-xl font-bold text-white mb-4">AI & Risk Engine</h3>
                 <ul className="text-gray-300 space-y-3 text-sm">
-                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>FastAPI Framework</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Random Forest ML</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>CNN Vision Models</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Real-time Processing</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Random Forest ensures precise flood predictions</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Combines historical and live weather data</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Generates real-time risk scores</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Retrains regularly for improved accuracy</li>
                 </ul>
               </div>
             </div>
@@ -343,16 +352,16 @@ export default function LandingPage() {
             {/* Dashboard */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 min-h-[280px] flex flex-col justify-between">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Dashboard</h3>
+                <h3 className="text-xl font-bold text-white mb-4">Interactive Dashboard</h3>
                 <ul className="text-gray-300 space-y-3 text-sm">
-                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Next.js Frontend</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Three.js 3D Globe</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Real-time Updates</li>
-                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Mobile Responsive</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Built with Next.js and TailwindCSS</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>3D globe to visualize flood hotspots</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Instant alerts via SMS</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Real-time heatmaps and trend graphs</li>
                 </ul>
               </div>
             </div>
@@ -401,7 +410,7 @@ export default function LandingPage() {
                   <Bot className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-6">AI-Powered Accuracy</h3>
-                <p className="text-gray-300 text-lg leading-relaxed">Advanced sensor fusion with computer vision and machine learning</p>
+                <p className="text-gray-300 text-lg leading-relaxed">Advanced sensor fusion with machine learning (random forest classifier)</p>
               </div>
             </div>
 
@@ -420,7 +429,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Meet Our Team Section */}
+{/* Meet Our Team Section */}
       <section className="relative z-10 py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -484,7 +493,7 @@ export default function LandingPage() {
                     href="https://linkedin.com/in/surajit-ray-0761382b9" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    title="LinkedIn profile of Jane Smith"
+                    title="LinkedIn profile of Surajit Ray"
                     className="group/link relative p-3 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25"
                   >
                     <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
@@ -516,7 +525,7 @@ export default function LandingPage() {
                     href="https://linkedin.com/in/anshley-mukherjee-8b1935320" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    title="LinkedIn profile of Mike Johnson"
+                    title="LinkedIn profile of Anshley Mukherjee"
                     className="group/link relative p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
                   >
                     <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
@@ -548,7 +557,7 @@ export default function LandingPage() {
                     href="https://linkedin.com/in/debnanda-datta" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    title="LinkedIn profile of Sarah Wilson"
+                    title="LinkedIn profile of Debnanada Datta"
                     className="group/link relative p-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-purple-500/25"
                   >
                     <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
