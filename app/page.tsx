@@ -49,11 +49,11 @@ export default function LandingPage() {
   }, [])
 
   const handlePredictNow = () => {
-    router.push('/dashboard')
+    router.push('/prediction_dashboard')
   }
 
-  const handleViewDashboard = () => {
-    router.push('/dashboard')
+  const handleAnalyzeWeather = () => {
+    router.push('/weather')
   }
 
   return (
@@ -194,7 +194,7 @@ export default function LandingPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative flex items-center z-10">
-                  Get Started
+                  Analyze Weather
                   <Shield className="ml-3 group-hover:scale-110 transition-transform duration-300" />
                 </span>
               </button>
@@ -458,13 +458,22 @@ export default function LandingPage() {
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
                   <a
-                    href="https://linkedin.com/in/aryan-ghosh-83a26631b" 
-                    target="_blank" 
+                    href="https://linkedin.com/in/aryan-ghosh-83a26631b"
+                    target="_blank"
                     rel="noopener noreferrer"
                     title="LinkedIn profile of Aryan Ghosh"
                     className="group/link relative p-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl hover:from-blue-500 hover:to-cyan-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
                   >
                     <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                  <a
+                    href="https://github.com/Aryan-Ghosh-Code"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="GitHub profile of Aryan Ghosh"
+                    className="group/link relative p-3 bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl hover:from-gray-600 hover:to-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-gray-500/25"
+                  >
+                    <Github className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
                   </a>
                 </div>
               </div>
@@ -489,14 +498,23 @@ export default function LandingPage() {
                 </p>
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
-                  <a 
-                    href="https://linkedin.com/in/surajit-ray-0761382b9" 
-                    target="_blank" 
+                  <a
+                    href="https://linkedin.com/in/surajit-ray-0761382b9"
+                    target="_blank"
                     rel="noopener noreferrer"
                     title="LinkedIn profile of Surajit Ray"
                     className="group/link relative p-3 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25"
                   >
                     <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                  <a
+                    href="https://github.com/surajit8100"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="GitHub profile of Surajit Ray"
+                    className="group/link relative p-3 bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl hover:from-gray-600 hover:to-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-gray-500/25"
+                  >
+                    <Github className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
                   </a>
                 </div>
               </div>
@@ -521,14 +539,23 @@ export default function LandingPage() {
                 </p>
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
-                  <a 
-                    href="https://linkedin.com/in/anshley-mukherjee-8b1935320" 
-                    target="_blank" 
+                  <a
+                    href="https://linkedin.com/in/anshley-mukherjee-8b1935320"
+                    target="_blank"
                     rel="noopener noreferrer"
                     title="LinkedIn profile of Anshley Mukherjee"
                     className="group/link relative p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
                   >
                     <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                  <a
+                    href="https://github.com/anshleyy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="GitHub profile of Anshley Mukherjee"
+                    className="group/link relative p-3 bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl hover:from-gray-600 hover:to-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-gray-500/25"
+                  >
+                    <Github className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
                   </a>
                 </div>
               </div>
@@ -553,14 +580,23 @@ export default function LandingPage() {
                 </p>
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
-                  <a 
-                    href="https://linkedin.com/in/debnanda-datta" 
-                    target="_blank" 
+                  <a
+                    href="https://linkedin.com/in/debnanda-datta"
+                    target="_blank"
                     rel="noopener noreferrer"
                     title="LinkedIn profile of Debnanada Datta"
                     className="group/link relative p-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-purple-500/25"
                   >
                     <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                  <a
+                    href="https://github.com/debnanda"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="GitHub profile of Debnanda Datta"
+                    className="group/link relative p-3 bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl hover:from-gray-600 hover:to-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-gray-500/25"
+                  >
+                    <Github className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
                   </a>
                 </div>
               </div>
