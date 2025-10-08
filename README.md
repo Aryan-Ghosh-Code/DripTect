@@ -50,11 +50,10 @@ graph TD
 
 ## ⚙️ Tech Stack  
 
-**Hardware** → ESP32, DHT11, Soil Moisture, Rain Sensor, Ultrasonic  
+**Hardware** → ESP32, DHT11, Soil Moisture, Rain Sensor, Ultrasonic Sensors
 **Backend** → Flask + Python (Random Forest ML Model)  
-**Frontend** → Next.js, TailwindCSS, Shadcn UI, Recharts, Framer Motion  
-**API** → OpenWeather API  
-**Database** → Pandas (logs), PostgreSQL (scalable option)  
+**Frontend** → Next.js, TailwindCSS, Shadcn UI, Recharts
+**API** → OpenWeather API 
 
 ---
 
