@@ -13,17 +13,11 @@ import {
   Zap,
   MapPin,
   Brain,
-  Smartphone,
-  Mail,
-  MessageSquare,
-  Sparkles,
   Shield,
   Activity,
-  Cloud,
   CloudRain,
   Linkedin,
   Github,
-  ExternalLink
 } from 'lucide-react'
 
 import AryanImg from './Assets/Aryan.png'
