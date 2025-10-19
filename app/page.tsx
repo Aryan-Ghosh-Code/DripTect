@@ -231,11 +231,11 @@ export default function LandingPage() {
             {/* Edge Sensors */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 min-h-[320px] flex flex-col justify-between">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Satellite className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Real-Time Data Collection</h3>
+                <h3 className="text-2xl font-bold text-white mb-6 flex-grow">Real-Time Data Collection</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">Smart IoT sensors continuously track rainfall, soil moisture, temperature, humidity, and water levels from the field, ensuring accurate and up-to-date monitoring.</p>
               </div>
             </div>
@@ -243,11 +243,11 @@ export default function LandingPage() {
             {/* Vision AI */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-10 text-center hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 min-h-[320px] flex flex-col justify-between">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-10 text-center hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/25">
                   <Eye className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Weather Dashboard</h3>
+                <h3 className="text-2xl font-bold text-white mb-6 flex-grow">Weather Dashboard</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">Combines sensor data with OpenWeather API feeds and presents them in an interactive 3D globe heatmap with live stats, 24-hour trends, and 7-day and 30-day forecasts.</p>
               </div>
             </div>
@@ -255,11 +255,11 @@ export default function LandingPage() {
             {/* ML Engine */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 min-h-[320px] flex flex-col justify-between">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Bot className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">AI-Powered Risk Prediction</h3>
+                <h3 className="text-2xl font-bold text-white mb-6 flex-grow">AI-Powered Risk Prediction</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">A custom machine learning model analyzes real-time and historical data to deliver precise flood risk predictions and actionable insights for better decision-making.</p>
               </div>
             </div>
@@ -267,11 +267,11 @@ export default function LandingPage() {
             {/* Alerts & Dashboard */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-10 text-center hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 min-h-[320px] flex flex-col justify-between">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-10 text-center hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
                   <Grid3X3 className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Instant Alerts & Notifications</h3>
+                <h3 className="text-2xl font-bold text-white mb-6 flex-grow">Instant Alerts & Notifications</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">Users receive instant flood risk alerts and actionable recommendations, enabling timely preventive measures and community preparedness.</p>
               </div>
             </div>
@@ -305,7 +305,7 @@ export default function LandingPage() {
             {/* Edge Sensors */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 min-h-[280px] flex flex-col justify-between">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full flex flex-col">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
@@ -323,7 +323,7 @@ export default function LandingPage() {
             {/* Edge Vision */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 min-h-[280px] flex flex-col justify-between">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 h-full flex flex-col">
                 <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/25">
                   <Eye className="w-8 h-8 text-white" />
                 </div>
@@ -339,7 +339,7 @@ export default function LandingPage() {
             {/* ML Backend */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full flex flex-col">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Brain className="w-8 h-8 text-white" />
                 </div>
@@ -356,7 +356,7 @@ export default function LandingPage() {
             {/* Dashboard */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 min-h-[280px] flex flex-col justify-between">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 h-full flex flex-col">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
@@ -385,11 +385,11 @@ export default function LandingPage() {
             {/* Real-time Detection */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Activity className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Real-time Detection</h3>
+                <h3 className="text-2xl font-bold text-white mb-6 flex-grow">Real-time Detection</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">Detect floods in &lt;10s latency with continuous monitoring</p>
               </div>
             </div>
@@ -397,11 +397,11 @@ export default function LandingPage() {
             {/* Hyperlocal Risk Mapping */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-10 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-10 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/25">
                   <MapPin className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Hyperlocal Risk Mapping</h3>
+                <h3 className="text-2xl font-bold text-white mb-6 flex-grow">Hyperlocal Risk Mapping</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">Interactive 3D globe dashboard with flood hotspot visualization</p>
               </div>
             </div>
@@ -409,11 +409,11 @@ export default function LandingPage() {
             {/* AI-Powered Accuracy */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-blue-500/25">
                   <Bot className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">AI-Powered Accuracy</h3>
+                <h3 className="text-2xl font-bold text-white mb-6 flex-grow">AI-Powered Accuracy</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">Advanced sensor fusion with machine learning (random forest classifier)</p>
               </div>
             </div>
@@ -421,11 +421,11 @@ export default function LandingPage() {
             {/* Instant Alerts */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-10 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-10 hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 h-full flex flex-col">
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
                   <Bell className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-6">Instant Alerts</h3>
+                <h3 className="text-2xl font-bold text-white mb-6 flex-grow">Instant Alerts</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">SMS, email, and dashboard notifications for immediate response</p>
               </div>
             </div>
@@ -441,11 +441,11 @@ export default function LandingPage() {
             <p className="text-gray-300 text-xl">The brilliant minds behind DripTect's innovative flood detection system</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Team Member 1 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full">
                 {/* Profile Image */}
                 <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 overflow-hidden border-4 border-blue-500/30">
                   <img 
@@ -486,7 +486,7 @@ export default function LandingPage() {
             {/* Team Member 2 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 text-center hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-cyan-500/30 rounded-3xl p-8 text-center hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 h-full">
                 {/* Profile Image */}
                 <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-cyan-500/25 overflow-hidden border-4 border-cyan-500/30">
                   <img 
@@ -527,7 +527,7 @@ export default function LandingPage() {
             {/* Team Member 3 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full">
                 {/* Profile Image */}
                 <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 overflow-hidden border-4 border-blue-500/30">
                   <img 
@@ -568,8 +568,7 @@ export default function LandingPage() {
             {/* Team Member 4 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 text-center hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
-                {/* Profile Image */}
+              <div className="relative bg-white/5 backdrop-blur-xl border border-purple-500/30 rounded-3xl p-8 text-center hover:border-purple-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 h-full">
                 <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-purple-500/25 overflow-hidden border-4 border-purple-500/30">
                   <img 
                     src={DebnandaImg.src} 
@@ -609,8 +608,7 @@ export default function LandingPage() {
             {/* Team Member 5 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
-                {/* Profile Image */}
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full">
                 <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 overflow-hidden border-4 border-blue-500/30">
                   <img 
                     src={DeboImg.src} 
@@ -628,7 +626,7 @@ export default function LandingPage() {
                   <a
                     href="https://www.linkedin.com/in/debojyoti-banerjee30/"
                     target="_blank"
-                    rel="noopener norAeferrer"
+                    rel="noopener noreferrer"
                     title="LinkedIn profile of Debojyoti Banerjee"
                     className="group/link relative p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
                   >
