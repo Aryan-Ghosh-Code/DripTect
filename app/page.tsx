@@ -30,6 +30,7 @@ import AryanImg from './Assets/Aryan.png'
 import SurajitImg from './Assets/Surajit.jpg'
 import AnshleyImg from './Assets/Anshley.jpg'
 import DebnandaImg from './Assets/Debnanda.jpg'
+import DeboImg from './Assets/debojyoti.jpg'
 import SystemArchImg from './Assets/System Architechture.png'
 
 export default function LandingPage() {
@@ -604,6 +605,48 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
+
+            {/* Team Member 5 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-white/5 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-8 text-center hover:border-blue-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                {/* Profile Image */}
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25 overflow-hidden border-4 border-blue-500/30">
+                  <img 
+                    src={DeboImg.src} 
+                    alt="Debojyoti Banerjee" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Debojyoti Banerjee</h3>
+                <p className="text-blue-300 font-medium mb-4">Full Stack and Android Lead</p>
+                <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                  Expert in full-stack and Android development, creating seamless, cross-platform solutions with robust backend architectures.
+                </p>
+                {/* Social Links */}
+                <div className="flex justify-center gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/debojyoti-banerjee30/"
+                    target="_blank"
+                    rel="noopener norAeferrer"
+                    title="LinkedIn profile of Debojyoti Banerjee"
+                    className="group/link relative p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25"
+                  >
+                    <Linkedin className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                  <a
+                    href="https://github.com/Debojyoti-30"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="GitHub profile of Debojyoti Banerjee"
+                    className="group/link relative p-3 bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl hover:from-gray-600 hover:to-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-gray-500/25"
+                  >
+                    <Github className="w-5 h-5 text-white group-hover/link:scale-110 transition-transform duration-300" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
